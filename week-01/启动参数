@@ -1,0 +1,32 @@
+java
+-Denv=PRO   指定环境
+-server
+-Xms4g      jvm初始内存4g
+-Xmx4g      jvm最小内存4g
+-Xmn2g      设置年轻代内存2g
+-XX:MaxDirectMemorySize=512m    该参数指定了DirectByteBuffer能分配的空间的限额；默认值是Xmx对应的值
+-XX:MetaspaceSize=128m          初始空间大小，达到该值就会触发垃圾收集进行类型卸载，同时GC会对该值进行调整
+-XX:MaxMetaspaceSize=512m       设置metaspace区域最大空间，默认是没有限制的
+-XX:-UseBiasedLocking           禁止使用偏向锁
+-XX:-UseCounterDecay            禁止JIT调用计数器衰减
+-XX:AutoBoxCacheMax=10240       修改Integer换成范围
+-XX:+UseConcMarkSweepGC         设置使用cms回收器
+-XX:CMSInitiatingOccupancyFraction=75   设置老年代使用率，如果大于75%就执行CMS GC
+-XX:+UseCMSInitiatingOccupancyOnly      配合上面使用；一般用于（降低CMS GC频率或者增加频率、减少GC时长）
+-XX:MaxTenuringThreshold=6              设置新生代的对象被复制的次数；默认15；如果大于就会到老年代
+-XX:+ExplicitGCInvokesConcurrent        程序中手动触发gc设置为cmsgc
+-XX:+ParallelRefProcEnabled             并行处理Reference 加快处理速度 缩短耗时
+-XX:+PerfDisableSharedMem               禁止写入统计文件
+-XX:+AlwaysPreTouch                     启动进程时分配jvm指定的所有内存
+-XX:-OmitStackTraceInFastThrow          当大量抛出同样的异常的后，后面的异常输出将不打印堆栈
+-XX:+ExplicitGCInvokesConcurrent        命令JVM无论什么时候调用系统GC，都执行CMS GC而不是Full GC
+-XX:+ParallelRefProcEnabled             并行处理Reference，加快处理速度，缩短耗时
+-XX:+HeapDumpOnOutOfMemoryError         JVM发生OOM时自动生成DUMP文件
+-XX:HeapDumpPath=/home/devjava/logs/    DUMP文件路径
+-Xloggc:/home/devjava/logs/lifecircle-tradecore-gc.log      设置GC文件路径
+-XX:+PrintGCApplicationStoppedTime      打印GC时应用暂停时间
+-XX:+PrintGCDateStamps                  打印GC执行时间戳
+-XX:+PrintGCDetails                     打印GC日志
+-javaagent:/home/devjava/ArmsAgent/arms-bootstrap-1.7.0-SNAPSHOT.jar    java探针
+-jar
+/home/devjava/lifecircle-tradecore/app/lifecircle-tradecore.jar         指定运行jar包
