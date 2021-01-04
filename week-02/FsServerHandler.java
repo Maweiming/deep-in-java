@@ -30,7 +30,7 @@ public class FsServerHandler extends SimpleChannelInboundHandler<String> {
      * 处理客户端发来的消息
      */
     @Override
-    public void messageReceived(ChannelHandlerContext ctx, String request) {
+    public void channelRead0(ChannelHandlerContext ctx, String request) {
         String response;
         boolean close = false;
         if (StringUtils.isBlank(request)) {
