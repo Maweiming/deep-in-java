@@ -30,6 +30,7 @@ public class FtpNettyServer {
     }
 
     public static void main(String[] args) throws Exception {
+
         String path = "/Users/coderma/Desktop/ftp";
         new FtpNettyServer("127.0.0.1", 10241, path).server();
     }
