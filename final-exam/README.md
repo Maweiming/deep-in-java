@@ -32,33 +32,56 @@ ftp>
 ftp> ls
 200 Command okay
 125 Opening ASCII mode data connection for file list.
-tp_store_exposure_record.csv
-01.png
-ui.xml
+1015-交易.csv
+1020-交易.csv
 226 Transfer complete.
 ftp> 
 ftp> 
-ftp> put project-run.sh
-200 Command okay
-150 Opening binary mode project-run.sh
-226 File transfer successful.
-1536 bytes sent in 0.0028 seconds (536 kbytes/s)
+ftp> hash
+Hash mark printing on (1024 bytes/hash mark).
 ftp> 
 ftp> 
-ftp> get ui.xml
+ftp> binary
+200 Type set to BINARY
+ftp> 
+ftp> 
+ftp> put 01.png
 200 Command okay
-150 Opening binary mode ui.xml
+150 Opening binary mode 01.png
+#########################################################
+#########################################################
+#########################################################
+#########################################################
+#########################################################
+#########################################################
+#########################################################
+#######################
 226 File transfer successful.
-41611 bytes received in 0.00455 seconds (8.72 Mbytes/s)
+432084 bytes sent in 0.00484 seconds (85.2 Mbytes/s)
+ftp> 
+ftp> 
+ftp> get 1020-交易.csv
+200 Command okay
+150 Opening binary mode 1020-??.csv
+#########################################################
+#########################################################
+#########################################################
+#########################################################
+#########################################################
+#########################################################
+##############################################
+226 File transfer successful.
+396815 bytes received in 0.00261 seconds (145 Mbytes/s)
+ftp> 
 ftp> 
 ftp> 
 ftp> ls
 200 Command okay
 125 Opening ASCII mode data connection for file list.
-tp_store_exposure_record.csv
-project-run.sh
 01.png
-ui.xml
+1015-交易.csv
+1020-交易.csv
+#
 226 Transfer complete.
 ftp> 
 ftp> 
@@ -66,7 +89,7 @@ ftp>
 ftp>
 ```
 
-###    
+###     
 
 ## Class描述
 
