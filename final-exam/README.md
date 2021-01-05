@@ -28,6 +28,7 @@ Connected to 127.0.0.1.
 Name (127.0.0.1:coderma): 
 230 USER LOGGED IN SUCCESSFULLY
 ftp> 
+ftp> 
 ftp> ls
 200 Command okay
 125 Opening ASCII mode data connection for file list.
@@ -36,11 +37,13 @@ tp_store_exposure_record.csv
 ui.xml
 226 Transfer complete.
 ftp> 
+ftp> 
 ftp> put project-run.sh
 200 Command okay
 150 Opening binary mode project-run.sh
 226 File transfer successful.
 1536 bytes sent in 0.0028 seconds (536 kbytes/s)
+ftp> 
 ftp> 
 ftp> get ui.xml
 200 Command okay
@@ -49,11 +52,21 @@ ftp> get ui.xml
 41611 bytes received in 0.00455 seconds (8.72 Mbytes/s)
 ftp> 
 ftp> 
+ftp> ls
+200 Command okay
+125 Opening ASCII mode data connection for file list.
+tp_store_exposure_record.csv
+project-run.sh
+01.png
+ui.xml
+226 Transfer complete.
 ftp> 
-
+ftp> 
+ftp> 
+ftp>
 ```
 
-###   
+###    
 
 ## Class描述
 
